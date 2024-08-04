@@ -1,0 +1,108 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Creatures {{name}}
+{%endblock %}
+
+
+{% block body %} 
+<link rel="stylesheet" href="{{url_for('static',filename='card.css')}}">    
+<section id="creatures-content" class="container creatures text-center">
+	<div class="pt-3">
+		<h1 class="text-capitalize">
+			{{name}}
+		</h1>
+		<img src="https://media.harrypotterfanzone.com/harry-potter-magical-creatures-1260x0-c-default.jpg" class="rounded img-fluid m-4">
+		<p>
+			{{info}}
+		</p>        
+	</div>
+</section>
+        
+  <section class="container d-flex">
+    {% for item in limited_data %}
+      <section class="card-section">
+          <div class="card creature-card">
+              <div class="flip-card">
+                  <div class="flip-card__container">
+                      <div class="card-front">
+                          <div class="card-front__tp card-front__tp--city">
+                          <h2 class="card-front__heading">
+                          {{item[0]}}
+                      </h2>
+                      </div>
+                          <div class="card-front__bt">
+                              <p class="card-front__text-view card-front__text-view--city">
+                                  View me
+                              </p>
+                          </div>
+                      </div>
+                      <div class="card-back">
+                          <img src={{item[9]}} class="img" alt="img">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="inside-page">
+                  <div class="inside-page__container">
+                      <h3 class="inside-page__heading inside-page__heading--city">
+                          {{item[1]}}
+                      </h3>
+                      <p class="inside-page__text">
+                         {{item[2]}}
+                      </p>
+                      <a href="{{ url_for('watch_more', item_id=item[0]) }}" class="inside-page__btn inside-page__btn--city tag-button" id="button">watch more</a>
+
+                  </div>
+              </div>
+          </div>
+        </section>
+    {%endfor%}
+</section>
+
+
+ 
+<section id="various-beasts" class="m-5">
+  <div class="container text-center">
+    <div id="beast-carousel" class="carousel slide bg-secondary" data-bs-ride="carousel">
+      <div class="carousel-inner px-5">
+        {% for item in items %}
+        {% if loop.index == 1 %}
+        <div class="carousel-item active p-5">
+        {% else %}
+        <div class="carousel-item p-5">
+        {% endif %}
+          <img class="m-5 rounded img-fluid" src="{{item[9]}}" alt="Slide {{ loop.index }}">
+            <!-- <div class="carousel-caption">   -->
+           <h2>{{ item[0] }}</h2>
+           <p>{{ item[1] }}</p>
+            <p>{{item[2]}}</p>
+              <p>{{item[3]}}</p>
+              <p>{{item[4]}}</p>
+              <a href="{{ url_for('watch_more', item_id=item[0]) }}" class="tag-button btn btn-info" id="button">
+                <i class="fa-solid fa-up-right-from-square"></i>               
+                Watch More!</a>
+              <a href="{{ url_for('add_bookmark', name=item[0]) }}" class="tag-button btn btn-info" id="button">
+                <i class="fa-solid fa-bookmark"></i>
+                                Bookmark
+              </a>
+              <a href="{{ url_for('delete_bookmark',bookmark_id=item[0]) }}" class="tag-button btn btn-info" id="button">
+                <i class="fa fa-bookmark"></i>
+                Delete Bookmark</a>
+        </div> 
+        {% endfor %}
+      </div>
+  
+        <!-- Previous and Next controls inside the carousel container   -->
+      <a class="carousel-control-prev" href="#beast-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#beast-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+ </section> 
+{% endblock %} 

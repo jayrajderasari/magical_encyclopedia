@@ -1,0 +1,205 @@
+{% extends 'layout.html' %}
+{% block title%}
+Home
+{% endblock %}
+
+{% block body%}
+<link rel="stylesheet" href="{{url_for('static',filename='new.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+<div id="wand">
+	<div class="cap"></div>
+</div>
+  
+  <div id="tiles">
+	<div class="tile">
+	  <i class="fa-solid fa-image"></i>
+	  <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/02/Harry-Potter-The-10-Scariest-Monsters-Magical-Creatures-Ranked-featured-image-2.jpg" />
+	</div>
+	<div class="tile">
+	  <i class="fa-solid fa-image"></i>
+	  <img src="https://img.buzzfeed.com/buzzfeed-static/static/2020-03/31/19/enhanced/901deb2432c1/original-115-1585682562-15.jpg?crop=1200:630;0,0%26downsize=1250:*" />
+	</div>
+	<div class="tile">
+	  <i class="fa-solid fa-image"></i>
+	  <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2021/05/Harry-Potter-Friends-Feature.jpg?format=auto&quality=80" />
+	</div>
+  </div>
+<div class="banner container-fluid text-center">
+    <h1 class="banner-title">
+        Magical Creatures in Hogwards
+    </h1>
+</div>            
+
+
+<section class="container introduction p-5">
+	<h2 class="text-center"> Introduction</h2>
+
+	<div class="row p-5">
+		<div class="col-6">
+			<h3>What is Wizarding World?</h3>
+			<p>
+				The Wizarding World takes place in a parallel magical civilization that coexists with the non-magical (Muggle) world but is concealed from the general public. It is a magical world where witches and wizards learn magic at Hogwarts School of Witchcraft and Wizardry, magical animals wander, and a sophisticated network of magical organizations and societies exists. It includes all of the magical components, locations, characters, and events that makeup Harry Potter's universe.
+			</p>
+			<hr>
+			<p>
+				The following are important aspects of the Wizarding World:
+			</p>
+			<p>
+
+				1. Hogwarts School of Witchcraft and Wizardry:Harry Potter and the School of Witchcraft and Wizardry: The well-known school where young witches and wizards receive magical training and learn about the magical world.
+				<br>
+				2. Magical Creatures: House elves, goblins, centaurs, dragons, hippogriffs, and other magical creatures can be found in the Wizarding World.
+				<br>
+				3. Magic Communities: Diagon Alley and Hogsmeade are hidden wizarding neighborhoods and villages where magical persons may buy goods and socialise.
+				<br>
+				4. Ministry of Magic: The British government's governing body for magical matters, responsible for keeping order and regulating magical practises.
+				<br>
+				5. Quidditch: A broomstick-based wizarding sport.
+				<br>	
+			</p>
+			<hr>
+			<p>
+				Dark Arts and Dark Wizards:  evil magic and evil wizards like Lord Voldemort pose substantial risks to the magical community in the Wizarding World.
+			</p>
+				<a href="https://www.youtube.com/watch?v=Iej7CcjiVn8" class="btn btn-secondary tag-button p-2">Watch video</a>
+		</div>
+		<div class="col-6">
+			<img class="rounded img-fluid float-end" src="https://www.hp-lexicon.org/wp-content/uploads/2016/04/Pottermore-Magical-Creatures-Hippogriffs.jpg" alt="img">
+			
+		</div>
+	</div>
+</section>
+
+<hr>
+
+
+
+<section id="beast-kinds" class="beast-kinds container">
+    <h2 class="text-center mb-5"> Various Kinds of beasts</h2>
+	<div class="row p-3">
+        <div class="col-6">
+            <h3>Beasts</h3>
+            <p>
+                This category includes magical creatures that are typically large, dangerous, and often have violent tendencies. Dragons, Acromantulas (giant spiders), and Manticores fall under this category.
+			</p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='beast')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                </a>
+		</div>
+		<div class="col-6 thumbnail">
+			<img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/acromantula.jpg')}}" alt="img">
+            <a class="thumbnail-text" href="{{url_for('creatures_page',name='beast')}}">Beasts</a>
+		</div>			
+	</div>
+
+	<div class="row p-3">
+        <div class="col-6 thumbnail">
+            <img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/Dobby_Full_CoS.webp')}}" alt="img">
+            <a href="{{url_for('creatures_page',name='beings')}}" class="thumbnail-text">Beings</a>
+        </div>	
+		<div class="col-6">
+            <h3>Being</h3>
+            <p>
+                Beings: Beings refer to creatures that possess intelligence and are capable of human-like communication. This category includes creatures like Centaurs, House-Elves, and Veela.
+                Muggles
+                wizards and witches
+                Goblins, vampires, hags, giants, house-elves, veela, and werewolves in their human form were also given this status.
+            </p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='beings')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                 </a>
+		</div>		
+	</div>
+    <div class="row p-3">
+        <div class="col-6">
+            <h3>Spirit</h3>
+			<p>
+                Spirits: These are non-corporeal entities that often inhabit specific locations or objects. Examples include Ghosts (such as Nearly Headless Nick), Poltergeists (like Peeves), and Boggarts.
+			</p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='spirit')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                 </a>
+		</div>
+		<div class="col-6 thumbnail">
+            <img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/Ghost_PM.webp')}}" alt="img">
+            <a href="{{url_for('creatures_page',name='spirit')}}" class="thumbnail-text">Spirits</a>
+        </div>			
+	</div>
+    <div class="row p-3">
+        <div class="col-6 thumbnail">
+            <img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/hippogriff.jpg')}}" alt="img">
+            <a href="{{url_for('creatures_page',name='fantastic')}}" class="thumbnail-text">Fantastic Beasts</a>
+        </div>		
+		<div class="col-6">
+			<h3>Fantastic Beasts</h3>
+			<p>
+                This category comprises a wide range of magical creatures, both small and large, with extraordinary qualities.
+                It includes creatures like Hippogriffs, Nifflers, Bowtruckles, and Thestrals.
+            </p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='fantastic')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                 </a>
+		</div>
+	</div>
+    <div class="row p-3">
+		<div class="col-6">
+			<h3>Dark Creatures</h3>
+			<p>
+                Dark creatures are often associated with dark magic or malevolence. 
+                They include Dementors, Inferi (reanimated corpses controlled by dark wizards), and Werewolves.
+            </p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='dark')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                 </a>
+		</div>
+		<div class="col-6 thumbnail">
+            <img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/Werewolf.jpg')}}" alt="img">
+            <a href="{{url_for('creatures_page',name='dark')}}" class="thumbnail-text">Dark Creatures</a>
+        </div>			
+	</div>
+    <div class="row p-3">
+        <div class="col-6 thumbnail">
+            <img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/images.jpg')}}" alt="img">
+            <a href="{{url_for('creatures_page',name='water')}}" class="thumbnail-text">Water Creatures</a>
+        </div>			
+		<div class="col-6">
+            <h3>Water Creatures</h3>
+			<p>
+                These are magical creatures that dwell primarily in aquatic environments.
+                Merpeople, Grindylows, and Kelpies are examples of water creatures.
+			</p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='water')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                 </a>
+		</div>
+	</div>
+    <div class="row p-3">
+        <div class="col-6">
+            <h3>Domesticated Creatures</h3>
+			<p>
+                Domesticated creatures are magical animals that are often kept as pets or companions 
+                by wizards and witches.
+                This category includes creatures like Owls, Cats (such as Crookshanks), and Rats (like Scabbers).
+            </p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='domestic')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                 </a>
+		</div>
+		<div class="col-6 thumbnail">
+            <img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/pet.jpg')}}" alt="img">
+            <a href="{{url_for('creatures_page',name='domesticate')}}" class="thumbnail-text">Domesticated Creatures</a>
+        </div>			
+	</div>
+    <div class="row p-3">
+        <div class="col-6 thumbnail">
+            <img class="rounded img-fluid thumbnail-img" src="{{url_for('static',filename='img/Whomping Willow.webp')}}" alt="img">
+            <a href="{{url_for('creatures_page',name='plant')}}" class="thumbnail-text">Plant Creatures</a>
+        </div>			
+		<div class="col-6">
+			<h3>Plant Creatures</h3>
+			<p>
+                These are magical creatures that are either partially or entirely made up of plant matter.                                             
+                The Whomping Willow and Venomous Tentacula are examples of plant creatures.
+            </p>
+			<a role="button" class="btn btn-secondary" href="{{url_for('creatures_page',name='plant')}}"><i class="fa-solid fa-up-right-from-square"></i>               
+Know more                 </a>
+		</div>
+	</div>
+</section>	
+
+<script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script><script  src="static/script.js"></script>
+{%endblock %}

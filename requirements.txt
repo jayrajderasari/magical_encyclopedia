@@ -1,0 +1,12 @@
+Flask
+Gunicorn
+# Jinja
+sqlalchemy
+python-dotenv
+flask_login
+flask_bcrypt
+flask_sqlalchemy
+flask_wtf
+wtforms
+flask_login
+wtforms

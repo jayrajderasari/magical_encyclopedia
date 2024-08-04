@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Encyclopedia 
+{%endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{url_for('static',filename='new.css')}}">
+<section class="container encyclopedia text-center">
+    {%for item in encyclopedia %}
+        <div class="card encyclopedia-card">
+            <div class="content">
+              <div class="front" style="background-image: url('{{item[9]}}');">
+                      {{item[0]}}                  
+              </div>                   
+              <div class="back">
+                <p>Description: {{item[1]}}</p>
+                <p>habitat: {{item[2]}}</p>
+                <p>abilities": {{item[3]}}</p>                
+                <p>interaction_with_human_wizards: {{item[4]}}</p>
+                <a href="{{ url_for('watch_more', item_id=item[0]) }}" class="tag-button btn btn-info m-2" id="button">watch more</a>    
+                <a href="{{ url_for('add_bookmark', name=item[0]) }}" class="tag-button btn btn-info m-2" id="button">
+                  <i class="fa-solid fa-bookmark"></i>
+                                  Bookmark
+                </a>            
+              </div>
+            </div>
+          </div>
+      {%endfor%}
+</section>
+
+
+{%endblock %}
